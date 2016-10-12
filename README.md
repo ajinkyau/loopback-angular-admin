@@ -8,7 +8,7 @@
  - [SonarQube Scanner](http://www.voyalab.com/2016/10/08/installing-sonarqube-scanner/)
 
 ##### In this we will analyse one sample project with SonarQube and SonarQube scanner. Make sure your configuration of SonarQube server and SonarQube Scanner is done. If not, refer [SonarQube] and [SonarQube Scanner][sonarqubescanner] installation guide.
-###### I am using one example project which I have forked on my github account. It is a simple MEAN app.For analysing projects with SonarQube you must have all necessary language plugins installed on your server.
+##### I am using one example project which I have forked on my github account. It is a simple MEAN app.For analysing projects with SonarQube you must have all necessary language plugins installed on your server.
 
 ## Installing Plugins 
  - Login as Administrator in SonarQube Server 
