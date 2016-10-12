@@ -4,8 +4,8 @@
 [![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/completeLogo-e1476280430173.png)](http://voyalab.com)
 
 ### Pre-requisite
- - [SonarQube][sonarqube]
- - [SonarQube Scanner][sonarqubescanner]
+ - [SonarQube](http://www.voyalab.com/2016/10/06/install-sonarqube-ubuntu/)
+ - [SonarQube Scanner](http://www.voyalab.com/2016/10/08/installing-sonarqube-scanner/)
 
 ##### In this we will analyse one sample project with SonarQube and SonarQube scanner. Make sure your configuration of SonarQube server and SonarQube Scanner is done. If not, refer [SonarQube] and [SonarQube Scanner][sonarqubescanner] installation guide.
 ###### I am using one example project which I have forked on my github account. It is a simple MEAN app.For analysing projects with SonarQube you must have all necessary language plugins installed on your server.
@@ -72,9 +72,10 @@
     #Commented beacuse We want to set multi language analysis 
     ```
  - Run sonar-runner or sonar-scanner 
-    ```sh 
-    $ sonar-scanner 
-    ```
+ ```sh
+ $ sonar-scanner
+ ```
+
  - Sample Output :
  [![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-32.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-32.png)
 [![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-41.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-41.png)
