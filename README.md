@@ -1,210 +1,87 @@
-# Check the [develop](https://github.com/beeman/loopback-angular-admin/tree/develop) branch for the latest and greatest
 
-More info on that is happening in the develop branch can be found [here](https://github.com/beeman/loopback-angular-admin/issues/179)
-
-
-# loopback-angular-admin
-
-The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
-
-**This software is not ready for production! It is still being developed and it will change in the future.**
-
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)        [![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](https://david-dm.org/beeman/loopback-angular-admin)        [![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)        [![Build Status](https://drone.io/github.com/beeman/loopback-angular-admin/status.png)](https://drone.io/github.com/beeman/loopback-angular-admin/latest)        [![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
-
-## Try it now!
-
-Deploy an instance on your Heroku account to play around with it!
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-An alternative way to get it running at Heroku is to install the [Heroku Toolbelt](https://toolbelt.heroku.com) and follow these steps:
-
-```
-git clone https://github.com/beeman/loopback-angular-admin.git my-project
-cd my-project
-heroku apps:create my-project
-git push heroku master
-```
-
-## Users
-
-After an installation the following users are created:
-
-- **Admin user**: Email: ```admin@admin.com```, password: ```admin```
-- **Regular user**: Email: ```user@user.com```:, password ```user```
-
-Please note, at this moment there is no difference in permissions for admin users or regular users. This needs to change in the future!
-
-## Features and implemented projects
-
-- A LoopBack REST API with authentication enabled built on the [LoopBack Generator](https://www.npmjs.org/package/generator-loopback)
-- A GUI built with AngularJS based on the [Angular Generator](https://github.com/yeoman/generator-angular)
-- Angular UI-Router
-- JSON-based forms by [angular-formly](https://formly-js.github.io/angular-formly/)
-- Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
-- File upload with [LoopBack storage services](https://github.com/strongloop/loopback-component-storage/)
-- Admin template powered by [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
-- Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
-- Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
-- [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
-- Automatically growing textarea's by [monospaced/angular-elastic](https://github.com/monospaced/angular-elastic)
-- Social authentication with [LoopBack passport](https://github.com/strongloop/loopback-component-passport/)
-- Multi-language support by [rubenv/angular-gettext](https://github.com/rubenv/angular-gettext)
-- User management
-- Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
-
-## TODO:
-
-- Permissions on user actions (non-admins cannot access advanced functions)
-- permissions on content items (non-admins can only edit own content, etc)
-- Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
-- Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
-- Add tests
-- Add Dockerfile
-- Add Vagrantfile
-
-
-[Tell me what we need more!](https://github.com/beeman/loopback-angular-admin/issues/new)
-
-## Screenshots
-#### Dashboard
-![](screenshots/dashboard.png?raw=true)
-#### Markdown Editor
-![](screenshots/pages.png?raw=true)
-#### SweetAlert
-![](screenshots/sweetalert.png?raw=true)
-#### File uploads
-![](screenshots/files.png?raw=true)
-#### Events
-![](screenshots/events.png?raw=true)
-
-## Installation
-
-### Dependencies
-
-Installation depends on `node`/`npm` with `grunt` and `bower` installed globally.
-
-    $ npm install -g bower grunt-cli
-
-### The one-liner install (please create an [issue](https://github.com/beeman/loopback-angular-admin/issues/new) if this one does not work!)
-
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && grunt build && grunt serve
-
-### The steps above: 
-
-### Checkout the project:
-
-    git clone https://github.com/beeman/loopback-angular-admin.git
-
-### Install the Node packages:
-
-    npm install
-
-### Run grunt build:
-
-    grunt build
-    
-### Run grunt serve to start the API and frontend:
-
-    grunt serve
-    
-
-## Running
-
-The project is separated in a server and a client.
-
-### Server
-
-To run the server you issue the command:
-
-    npm start
-
-Or to run it with nodemon (needs `nodemon` installed globally). This will
-automatically restart the server when you change its code:
-
-    npm run dev
-
-The command `grunt serve` explained below wil automatically start the API.
-
-### Client
-
-Rebuild the lb-services.js file with the correct `API_URL` for development.
-
-    API_URL=http://0.0.0.0:3000/api grunt
-
-To run the client you issue the command. This will also start the API.
-
-    grunt serve
-
-It will open the project in your default browser with livereload enabled.
-This will take care of reloading the page when you change your code.
-
-## Connect to a database
-
-You can specify the URL to the MongoDB database you want to use with the `MONGODB_URL` environment variable.
-
-    MONGODB_URL="mongodb://localhost:27017/loopback-angular-admin" npm start
-
-Set `INITDB` to true if you want to load the initial dataset, which creates the admin user. The memory database (default) does this automatically.
-
-    INITDB=true MONGODB_URL="mongodb://localhost:27017/loopback-angular-admin" npm start
-
-This also works with the free hosted MongoDB instances at [compose.io](https://www.compose.io) and [mongolab.com](https://mongolab.com)!
-
-## API Security
-
-**WARNING: Most models don't have an ACL configured. This means that anyone with access to the API can edit most of it's content.**
-
-To access models with access control enable you need an AccessToken. You can get an access token by logging in to the API.
-
-To ease development you can create an AccessToken while starting the server by setting the DEV_ACCESS_TOKEN environment variable. 
-
-    DEV_ACCESS_TOKEN=MySecretToken npm run dev
-
-## Development
-
-If you want to share your work through a Pull Request, be sure to make it a clean branch (one functionality per PR) and base it off master.
-
-If you plan on making a big change or replace a core function with something else it is probably best to first open an issue to discuss it with me. This will enhance the chance of the eventual changes getting merged a lot :)
-
-The API is built with [generator-loopback](https://www.npmjs.org/package/generator-loopback).
-
-The GUI is built with [generator-angular](https://www.npmjs.org/package/generator-angular) but is no longer compatible due to refactoring the project into modules.
-
-These should help you quickly add code to your project. Further details tailored to this project might follow in the future.
-
-
-## Unit Testing using Karma/Jasmine
-
-    $ node_modules/.bin/karma start client/test/karma.conf.js
-
-    INFO [karma]: Karma v0.12.31 server started at http://localhost:8080/
-    INFO [launcher]: Starting browser PhantomJS
-    INFO [PhantomJS 1.9.8 (Linux)]: Connected on socket aLJmRuSNUH2rPfpWgS3l with id 89641972
-    PhantomJS 1.9.8 (Linux): Executed 1 of 1 SUCCESS (0.007 secs / 0.029 secs)
-
-
-### Useful commits
-
-These commits might be useful when extending the functionality.
-
-- [Add support for MongoDB databases](https://github.com/beeman/loopback-angular-admin/commit/6b884e601d535ed64b4ef4f6f07e0f55d357a5b6)
-- [Add custom method to the API](https://github.com/beeman/loopback-angular-admin/commit/eedbd03f755ddf2234872886ee390ac4f6753c64)
-- [Rename a model](https://github.com/beeman/loopback-angular-admin/commit/88254ce59af29818aec900514693e3fe6c94acea)
-
-### WebSockets / socket.io
-
-At this moment there is no integration for socket.io or websockets, nor will there be in the near future. Once LoopBack has integrated support for it we will leverage from that.
-
-Having that said, it's certainly possible to integrate socket.io, check [this](https://github.com/beeman/loopback-angular-admin/pull/44) pull request by [@movibe](https://github.com/movibe).
-
-# Related Projects
-
-Here are some projects that are related to what this project does. Please send a PR or create an issue if you have any additions to this list.
-
-- [BoLaMN/loopback-component-admin](https://github.com/BoLaMN/loopback-component-admin) 
-- [johannesjo/generator-angular-auto-admin-loopback](https://github.com/johannesjo/generator-angular-auto-admin-loopback)
-
-# Issues
-
-If you have any problems please [contact me](https://github.com/beeman/loopback-angular-admin/issues/new).
+# Analyse Sample Project with SonarQube 
+###### Powered By,
+[![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/completeLogo-e1476280430173.png)](http://voyalab.com)
+
+### Pre-requisite
+ - [SonarQube][sonarqube]
+ - [SonarQube Scanner][sonarqubescanner]
+
+##### In this we will analyse one sample project with SonarQube and SonarQube scanner. Make sure your configuration of SonarQube server and SonarQube Scanner is done. If not, refer [SonarQube] and [SonarQube Scanner][sonarqubescanner] installation guide.
+###### I am using one example project which I have forked on my github account. It is a simple MEAN app.For analysing projects with SonarQube you must have all necessary language plugins installed on your server.
+
+## Installing Plugins 
+ - Login as Administrator in SonarQube Server 
+ - Click on administration tab 
+ - Click on System it will give dropdown menu. 
+ - Click on Update Center 
+[![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-17-43-47.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-17-43-47.png)
+ - You can see all installed and available plugins.
+ - According to your project install those plugins.
+ [![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-18-00-46.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-18-00-46.png)
+ - Now your server is capable of analysing projects with those installed plugins.
+
+## Configuring sonar-project.properties file
+ - Sonar-runner (now sonar-scanner) is default launcher to anlayse project with SonarQube.
+ - Create Configuration file in root direcctory of project. 
+ - For sample we are using one example project from our [github](https://github.com/voyalab).
+ - Configuration file consist ,
+   ```sh
+     # must be unique in a given SonarQube instance
+     sonar.projectKey=my:project
+     # this is the name and version displayed in the SonarQube UI. Was mandatory      prior to SonarQube 6.1.
+     sonar.projectName=My project
+     sonar.projectVersion=1.0
+     # Path is relative to the sonar-project.properties file. Replace "\" by "/"      on Windows.
+     # Since SonarQube 4.2, this property is optional if sonar.modules is set. 
+     # If not set, SonarQube starts looking for source code from the directory       containing 
+     # the sonar-project.properties file.
+     sonar.sources=.
+ 
+     # Encoding of the source code. Default is default system encoding
+     #sonar.sourceEncoding=UTF-8
+     ```
+ - For our sample project , you can clone project from [here](https://github.com/voyalab/loopback-angular-admin)
+ - In root directory create sonar-project.properties ,
+    ```sh
+    #This is sonar properties file. Sonar-runner will understand different parameters for analysis with this file
+    #You will get complete parameters list at         http://docs.sonarqube.org/display/SONAR/Analysis+Parameters
+
+    #Parameters start
+    #Sonar host url - used for making connection with server
+    sonar.host.url = http://localhost:9000/sonar
+
+    #Project related mandotary parameters
+    sonar.projectKey = LoopbackAngularMaster
+    sonar.projectName = LoopbackDemo
+    sonar.projectVersion = 1.0
+
+    #Comma-separated paths to directories containing source files.
+    sonar.sources = client , common , server
+
+    #Project configuration Parameters
+    sonar.projectDescription = Its an example angular app forked from github.
+
+    #Set the source file encoding.Encoding of source files. Example of values:     UTF-8, MacRoman, Shift_JIS.
+    sonar.sourceEncoding = UTF-8
+
+    #Set analysis language
+    #Set the language of the source code to analyze. Browse the     http://docs.sonarqube.org/display/PLUG/Plugin+Library page to get the list of   all available languages.
+    #If not set, a multi-language analysis will be triggered.
+    #sonar.language = Javascript , CSS
+    #Commented beacuse We want to set multi language analysis 
+    ```
+ - Run sonar-runner or sonar-scanner 
+    ```sh 
+    $ sonar-scanner 
+    ```
+ - Sample Output :
+ [![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-32.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-32.png)
+[![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-41.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-41.png)
+[![N|Solid](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-52.png)](http://www.voyalab.com/wp-content/uploads/2016/10/Screenshot-from-2016-10-12-14-14-52.png)
+
+ - You can avoid potential risk by adapting sonarqube.
+ 
+   [sonarqube]:<http://www.voyalab.com/2016/10/06/install-sonarqube-ubuntu/>
+   [sonarqubescanner]:<http://www.voyalab.com/2016/10/08/installing-sonarqube-scanner/>
+   
